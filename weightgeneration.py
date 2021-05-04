@@ -167,6 +167,24 @@ weight.create_dataset("weight_alpha", data = alpha)
 
 weight.close()
 
+print("Prediction Test")
+
+pred = predimg[:, None].T * alpha
+
+#pred = np.mean(np.mean(pred, axis = 1))
+
+print(pred)
+
+print(pred.shape)
+
+pred = np.sum(pred, axis = 1) #np.array(pred, dtype = np.uint8)
+
+print(pred)
+
+pred = np.sum(pred)
+
+print(pred)
+
 end_time = datetime.now()
 
 print("ENDED AT : ", end_time)
